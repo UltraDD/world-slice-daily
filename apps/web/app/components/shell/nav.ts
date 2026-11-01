@@ -21,21 +21,15 @@ const SECTIONS: Array<{ title: string; items: NavItem[] }> = [
   {
     title: "内容",
     items: [
-      { to: "/", label: "精选", icon: IconBolt, end: true },
-      { to: "/all", label: subjectAfter("全部", "动态"), icon: IconList },
-      { to: "/hot", label: "热点榜", icon: IconFlame },
-      { to: "/daily", label: withSubject("日报"), icon: IconDoc },
-      { to: "/topics", label: "主题", icon: IconGrid },
-      { to: "/starred", label: "收藏", icon: IconBookmark },
+      { to: "/ideas", label: "今日选题", icon: IconBolt, end: true },
+      { to: "/queue", label: "待拍", icon: IconBookmark },
+      { to: "/signals", label: "热点线索", icon: IconList },
     ],
   },
   {
     title: "更多",
     items: [
-      { to: "/agent", label: "Agent 接入", icon: IconPlug },
-      { to: "/about", label: "关于", icon: IconHeart },
-      { to: "/changelog", label: "更新日志", icon: IconHistory, changelog: true },
-      { to: "/feedback", label: "反馈", icon: IconMessage },
+      { to: "/admin", label: "管理后台", icon: IconGrid },
     ],
   },
 ];
@@ -104,10 +98,10 @@ export interface Tab {
 }
 
 const ENGINE_TABS: Tab[] = [
-  { key: "featured", to: "/", label: "精选", icon: IconBolt },
-  { key: "hot", to: "/hot", label: "热点", icon: IconFlame },
-  { key: "daily", to: "/daily", label: "日报", icon: IconDoc },
-  { key: "me", to: "/more", label: "我的", icon: IconUser, changelog: true },
+  { key: "featured", to: "/ideas", label: "选题", icon: IconBolt },
+  { key: "hot", to: "/signals", label: "线索", icon: IconList },
+  { key: "daily", to: "/queue", label: "待拍", icon: IconBookmark },
+  { key: "me", to: "/admin", label: "管理", icon: IconGrid },
 ];
 
 /** The tab bar: the engine's, the modules' before 我的. */
